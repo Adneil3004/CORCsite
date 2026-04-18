@@ -1,0 +1,40 @@
+@import "tailwindcss";
+
+@theme {
+  /* Brand Colors */
+  --color-corc-red: #D90416;
+  --color-corc-blue: #91CDF2;
+  --color-corc-yellow: #F2E41B;
+  --color-corc-gold: #D9D15F;
+  --color-corc-cream: #F2EAC2;
+
+  /* Semantic Colors */
+  --color-background: #ffffff;
+  --color-foreground: #171717;
+  --color-surface: #ffffff;
+  --color-surface-dim: #F2EAC2;
+
+  /* Typography */
+  --font-headline: var(--font-plus-jakarta);
+  --font-body: var(--font-inter);
+}
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@layer base {
+  body {
+    @apply bg-background text-foreground font-body;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-headline tracking-tight;
+  }
+}
+
+/* Glassmorphism Utility */
+.glass-nav {
+  @apply backdrop-blur-md bg-corc-yellow/90;
+}
