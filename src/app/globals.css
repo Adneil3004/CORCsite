@@ -8,9 +8,18 @@
   --color-corc-gold: #D9D15F;
   --color-corc-cream: #F2EAC2;
 
+  /* Premium Design Colors (from HTML) */
+  --color-primary: #AC000E;
+  --color-secondary: #216585;
+  --color-tertiary: #676000;
+  --color-on-surface: #1F1C04;
+  --color-surface-container-high: #F1E9C1;
+  --color-surface-container-highest: #EBE3BC;
+  --color-surface-container-lowest: #FFFFFF;
+
   /* Semantic Colors */
   --color-background: #ffffff;
-  --color-foreground: #171717;
+  --color-foreground: #1F1C04;
   --color-surface: #ffffff;
   --color-surface-dim: #F2EAC2;
 

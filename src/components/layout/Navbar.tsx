@@ -2,17 +2,16 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { Menu, X, Heart, Users, Newspaper, Smartphone } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const navLinks = [
-  { name: "Inicio", href: "/", icon: Heart },
-  { name: "Nosotros", href: "/nosotros", icon: Users },
-  { name: "Vocaciones", href: "/vocaciones", icon: Heart },
-  { name: "Pastoral", href: "/pastoral", icon: Heart },
-  { name: "Noticias", href: "/noticias", icon: Newspaper },
-  { name: "Contacto", href: "/contacto", icon: Smartphone },
+  { name: "Inicio", href: "/" },
+  { name: "Historia", href: "/historia" },
+  { name: "Sedes", href: "/sedes" },
+  { name: "Vocaciones", href: "/vocaciones" },
+  { name: "Contacto", href: "/contacto" },
 ];
 
 export default function Navbar() {
@@ -20,9 +19,16 @@ export default function Navbar() {
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
-      <div className="w-full">
-        <div className="bg-corc-yellow border-b border-black/5 px-6 sm:px-10 h-20 flex items-center justify-between shadow-sm">
-          {/* Logo */}
+      {/* Upper Motto Bar */}
+      <div className="bg-[#ac000e] py-1 text-center hidden md:block">
+        <span className="text-[10px] md:text-xs font-headline font-bold text-[#f2e41b] uppercase tracking-[0.4em]">
+          Per Christum et cum Ipso et in Ipso
+        </span>
+      </div>
+
+      <div className="w-full bg-[#f2e41b] shadow-md">
+        <div className="max-w-7xl mx-auto px-6 sm:px-10 h-20 flex items-center justify-between">
+          {/* Logo & Brand */}
           <Link href="/" className="flex items-center gap-3 group">
             <div className="relative w-12 h-12 transition-transform duration-300 group-hover:scale-105">
               <Image
@@ -34,30 +40,37 @@ export default function Navbar() {
               />
             </div>
             <div className="flex flex-col">
-              <span className="text-black font-headline font-bold text-lg leading-none">
+              <span className="text-[#ac000e] font-headline font-black text-xl leading-none uppercase tracking-tighter">
                 CORC
+              </span>
+              <span className="text-[#1f1c04] font-headline font-bold text-[10px] uppercase tracking-widest hidden sm:block">
+                Operarios del Reino de Cristo
               </span>
             </div>
           </Link>
 
           {/* Desktop Links */}
-          <div className="hidden lg:flex items-center gap-8">
+          <div className="hidden lg:flex items-center gap-10">
             {navLinks.map((link) => (
               <Link
                 key={link.name}
                 href={link.href}
-                className="text-black/80 hover:text-black font-body text-sm font-semibold transition-colors relative group"
+                className="text-[#1f1c04] hover:text-[#ac000e] font-headline text-sm font-extrabold uppercase tracking-tight transition-colors relative group"
               >
                 {link.name}
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-corc-red transition-all duration-300 group-hover:w-full" />
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#ac000e] transition-all duration-300 group-hover:w-full" />
               </Link>
             ))}
+            
+            <button className="bg-[#ac000e] text-white px-6 py-2 rounded-full font-headline font-black uppercase tracking-wider text-xs hover:bg-[#8e000b] transition-all active:scale-95">
+              Portal
+            </button>
           </div>
 
           {/* Mobile Toggle */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="lg:hidden p-2 text-black/70 hover:text-black transition-colors"
+            className="lg:hidden p-2 text-[#1f1c04] hover:text-[#ac000e] transition-colors"
           >
             {isOpen ? <X size={28} /> : <Menu size={28} />}
           </button>
@@ -68,23 +81,26 @@ export default function Navbar() {
       <AnimatePresence>
         {isOpen && (
           <motion.div
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-            className="lg:hidden absolute top-32 left-4 right-4 bg-white/95 backdrop-blur-xl rounded-3xl shadow-2xl border border-white/20 p-6 overflow-hidden"
+            initial={{ opacity: 0, y: -20, scale: 0.95 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            exit={{ opacity: 0, y: -20, scale: 0.95 }}
+            className="lg:hidden absolute top-24 left-4 right-4 bg-[#f2e41b] rounded-3xl shadow-2xl border border-black/5 p-8 overflow-hidden"
           >
-            <div className="flex flex-col gap-4">
+            <div className="flex flex-col gap-6">
               {navLinks.map((link) => (
                 <Link
                   key={link.name}
                   href={link.href}
                   onClick={() => setIsOpen(false)}
-                  className="flex items-center gap-4 p-4 rounded-2xl hover:bg-corc-cream/50 transition-all text-foreground/80 hover:text-corc-red group"
+                  className="text-[#1f1c04] font-headline font-black text-2xl uppercase tracking-tight hover:text-[#ac000e] transition-colors"
                 >
-                  <link.icon className="text-corc-red group-hover:scale-110 transition-transform" size={24} />
-                  <span className="font-headline font-bold text-lg">{link.name}</span>
+                  {link.name}
                 </Link>
               ))}
+              <hr className="border-black/10" />
+              <button className="bg-[#ac000e] text-white px-8 py-4 rounded-2xl font-headline font-black uppercase text-center">
+                Portal Miembros
+              </button>
             </div>
           </motion.div>
         )}
