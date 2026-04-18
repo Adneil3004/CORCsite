@@ -1,13 +1,14 @@
-import Image from "next/image";
 import Navbar from "@/components/layout/Navbar";
+import Footer from "@/components/layout/Footer";
 import Hero from "@/components/home/Hero";
 import Mission from "@/components/home/Mission";
+import Image from "next/image";
 
 export default function Home() {
   return (
     <>
       <Navbar />
-      <main className="flex-grow pt-0"> {/* Eliminado offset del banner superior */}
+      <main className="flex-grow pt-0">
         <Hero />
         <Mission />
         
@@ -35,7 +36,7 @@ export default function Home() {
             </div>
             <div className="flex-1 w-full aspect-square relative rounded-[3rem] overflow-hidden shadow-2xl skew-y-2 border-8 border-white/10 group">
                <Image
-                 src="/imgs/img2.jpg"
+                 src="/CORCsite/imgs/img2.webp"
                  alt="Historia CORC"
                  fill
                  className="object-cover transition-transform duration-700 group-hover:scale-110"
@@ -60,24 +61,7 @@ export default function Home() {
             </div>
         </section>
       </main>
-      
-      <footer className="bg-corc-cream/30 py-12 border-t border-foreground/5">
-        <div className="max-w-7xl mx-auto px-4 text-center">
-          <p className="text-corc-red font-headline font-bold uppercase tracking-[0.4em] mb-4">
-            Per Christum et cum Ipso et in Ipso
-          </p>
-          <div className="flex justify-center gap-6 mb-8 text-foreground/40 font-semibold uppercase text-[10px] tracking-widest">
-            <span>Inicio</span>
-            <span>Nosotros</span>
-            <span>Pastoral</span>
-            <span>Noticias</span>
-            <span>Contacto</span>
-          </div>
-          <p className="text-foreground/40 text-xs">
-            &copy; {new Date().getFullYear()} Confraternidad Sacerdotal de Operarios del Reino de Cristo.
-          </p>
-        </div>
-      </footer>
+      <Footer />
     </>
   );
 }

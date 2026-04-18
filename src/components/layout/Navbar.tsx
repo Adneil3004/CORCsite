@@ -19,20 +19,13 @@ export default function Navbar() {
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
-      {/* Upper Motto Bar */}
-      <div className="bg-[#ac000e] py-1 text-center hidden md:block">
-        <span className="text-[10px] md:text-xs font-headline font-bold text-[#f2e41b] uppercase tracking-[0.4em]">
-          Per Christum et cum Ipso et in Ipso
-        </span>
-      </div>
-
       <div className="w-full bg-[#f2e41b] shadow-md">
         <div className="max-w-7xl mx-auto px-6 sm:px-10 h-20 flex items-center justify-between">
           {/* Logo & Brand */}
           <Link href="/" className="flex items-center gap-3 group">
             <div className="relative w-12 h-12 transition-transform duration-300 group-hover:scale-105">
               <Image
-                src="/imgs/Logo CORC.png"
+                src="/CORCsite/imgs/Logo CORC.webp"
                 alt="Logo CORC"
                 fill
                 className="object-contain"

@@ -5,8 +5,8 @@ import { motion } from "framer-motion";
 
 const missionCards = [
   {
-    title: "Vocación Sacerdotal",
-    description: "Merecer, pedir, buscar, fomentar, engendrar y atender a las vocaciones sacerdotales.",
+    title: "12 de Septiembre de 1963",
+    description: "Fecha de fundación de nuestra Confraternidad a los pies de la Virgen de Guadalupe, consagrando la obra de los Operarios.",
     icon: Heart,
     color: "bg-corc-red",
     size: "col-span-2 row-span-2",
@@ -70,10 +70,20 @@ export default function Mission() {
               </div>
               
               <div>
-                <h3 className={`text-2xl md:text-3xl font-headline font-bold mb-4 ${card.color.includes('text-foreground') ? 'text-foreground' : 'text-white'}`}>
+                <h3 className={`${
+                  index === 0 
+                    ? 'text-5xl md:text-6xl lg:text-[5rem] leading-[0.9] mb-6' 
+                    : 'text-2xl md:text-3xl mb-4'
+                } font-headline font-black uppercase tracking-tighter ${
+                  card.color.includes('text-foreground') ? 'text-foreground' : 'text-white'
+                }`}>
                   {card.title}
                 </h3>
-                <p className={`text-sm md:text-base opacity-80 ${card.color.includes('text-foreground') ? 'text-foreground' : 'text-white'}`}>
+                <p className={`${
+                  index === 0 ? 'text-lg md:text-xl max-w-sm' : 'text-sm md:text-base'
+                } opacity-80 font-medium ${
+                  card.color.includes('text-foreground') ? 'text-foreground' : 'text-white'
+                }`}>
                   {card.description}
                 </p>
               </div>

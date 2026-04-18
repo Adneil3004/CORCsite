@@ -1,17 +1,19 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { motion } from "framer-motion";
 import Navbar from "@/components/layout/Navbar";
+import Footer from "@/components/layout/Footer";
 
 export default function Historia() {
   return (
     <div className="bg-white min-h-screen">
       <Navbar />
       
-      <main className="pt-24 lg:pt-32">
+      <main className="pt-32 lg:pt-48">
         {/* Hero Section: Editorial Premium */}
-        <section className="relative min-h-[80vh] flex flex-col justify-center overflow-hidden bg-white mb-20 px-6 sm:px-12">
+        <section className="relative min-h-[80vh] flex flex-col justify-center overflow-hidden bg-white mb-40 px-6 sm:px-12">
           <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center z-10">
             <div className="lg:col-span-7">
               <motion.div
@@ -43,7 +45,7 @@ export default function Historia() {
                 className="aspect-[4/5] rounded-[3rem] overflow-hidden shadow-[0_50px_100px_-20px_rgba(0,0,0,0.3)] border-8 border-white bg-gray-100"
               >
                 <Image
-                  src="/imgs/img1.jpg"
+                  src="/CORCsite/imgs/img1.webp"
                   alt="Operarios del Reino de Cristo"
                   fill
                   className="object-cover"
@@ -130,7 +132,7 @@ export default function Historia() {
                   </p>
                 </div>
                 <div className="flex-shrink-0 w-32 h-32 rounded-full overflow-hidden border-4 border-white shadow-lg grayscale hover:grayscale-0 transition-all duration-500">
-                  <Image src="/imgs/fundador.webp" alt="P. Enrique" width={128} height={128} className="object-cover" />
+                  <Image src="/CORCsite/imgs/fundador.webp" alt="P. Enrique" width={128} height={128} className="object-cover" />
                 </div>
               </motion.div>
             </div>
@@ -148,7 +150,7 @@ export default function Historia() {
                 className="relative"
               >
                 <Image 
-                  src="/imgs/fundador.webp" 
+                  src="/CORCsite/imgs/fundador.webp" 
                   alt="Padre Enrique Amezcua Medina" 
                   width={600} 
                   height={800} 
@@ -214,7 +216,7 @@ export default function Historia() {
               {/* Card 1 */}
               <div className="min-w-[320px] md:min-w-[420px] bg-white rounded-[3rem] p-10 shadow-xl border border-black/5 snap-start group cursor-pointer transition-all hover:shadow-2xl">
                 <div className="aspect-video bg-gray-100 rounded-[2rem] mb-8 overflow-hidden relative">
-                  <Image src="/imgs/img2.jpg" alt="Noticia 1" fill className="object-cover group-hover:scale-110 transition-transform duration-700" />
+                  <Image src="/CORCsite/imgs/img2.webp" alt="Noticia 1" fill className="object-cover group-hover:scale-110 transition-transform duration-700" />
                 </div>
                 <span className="bg-[#91cdf2]/40 text-[#001e2d] px-4 py-1.5 rounded-full text-xs font-black uppercase tracking-widest">Eventos</span>
                 <h3 className="font-headline text-3xl font-black mt-6 mb-4 text-[#1f1c04] leading-tight">Celebración Patronal</h3>
@@ -228,7 +230,7 @@ export default function Historia() {
                {/* Card 2 */}
                <div className="min-w-[320px] md:min-w-[420px] bg-white rounded-[3rem] p-10 shadow-xl border border-black/5 snap-start group cursor-pointer transition-all hover:shadow-2xl">
                 <div className="aspect-video bg-gray-100 rounded-[2rem] mb-8 overflow-hidden relative">
-                  <Image src="/imgs/img1.jpg" alt="Noticia 2" fill className="object-cover group-hover:scale-110 transition-transform duration-700" />
+                  <Image src="/CORCsite/imgs/img1.webp" alt="Noticia 2" fill className="object-cover group-hover:scale-110 transition-transform duration-700" />
                 </div>
                 <span className="bg-[#f2e41b]/40 text-[#676000] px-4 py-1.5 rounded-full text-xs font-black uppercase tracking-widest">Nuevas Misiones</span>
                 <h3 className="font-headline text-3xl font-black mt-6 mb-4 text-[#1f1c04] leading-tight">Misión en California</h3>
@@ -243,25 +245,7 @@ export default function Historia() {
         </section>
       </main>
 
-      {/* Footer Proporcional al Navbar */}
-      <footer className="bg-[#f2e41b] py-20 px-6 sm:px-12 border-t border-black/5">
-        <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-12 text-center md:text-left">
-          <div>
-            <span className="font-headline text-3xl font-black text-[#ac000e] tracking-tightest uppercase mb-4 block">CORC</span>
-            <p className="text-[#1f1c04]/60 font-medium max-w-sm">Haciendo que Cristo reine a través de la formación y el servicio diocesano.</p>
-          </div>
-          <div className="flex flex-wrap justify-center gap-10 font-headline font-bold text-sm uppercase tracking-widest text-[#1f1c04]">
-            <Link href="/" className="hover:text-[#ac000e] transition-colors">Inicio</Link>
-            <Link href="/historia" className="text-[#ac000e]">Historia</Link>
-            <Link href="/sedes" className="hover:text-[#ac000e] transition-colors">Sedes</Link>
-            <Link href="/vocaciones" className="hover:text-[#ac000e] transition-colors">Vocaciones</Link>
-            <Link href="/contacto" className="hover:text-[#ac000e] transition-colors">Contacto</Link>
-          </div>
-          <p className="text-[#1f1c04]/40 text-xs font-bold uppercase tracking-widest">
-            &copy; {new Date().getFullYear()} Operarios del Reino de Cristo
-          </p>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 }

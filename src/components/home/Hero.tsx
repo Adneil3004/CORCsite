@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 
 export default function Hero() {
   return (
-    <section className="relative min-h-[90vh] w-full overflow-hidden flex items-center bg-white pt-20">
+    <section className="relative min-h-[90vh] w-full overflow-hidden flex items-center bg-white pt-32">
       {/* Background Watermark "CORC" */}
       <div className="absolute inset-0 z-0 flex items-center justify-center pointer-events-none overflow-hidden">
         <span className="text-[25vw] font-headline font-extrabold text-foreground/[0.03] select-none leading-none tracking-tighter">
@@ -26,13 +26,13 @@ export default function Hero() {
             >
               <h1 className="font-headline font-extrabold leading-[0.85] tracking-tight flex flex-col">
                 <span className="text-corc-red text-[6rem] md:text-[8rem] lg:text-[10rem] uppercase">
-                  PER CHRISTUM
+                  Operarios
                 </span>
                 <span className="text-[#3a3520] text-[6rem] md:text-[8rem] lg:text-[10rem] uppercase -mt-4">
-                  ET CUM IPSO
+                  del Reino
                 </span>
                 <span className="text-corc-gold text-[6rem] md:text-[8rem] lg:text-[10rem] uppercase -mt-4">
-                  ET IN IPSO
+                  de Cristo
                 </span>
               </h1>
             </motion.div>
@@ -70,7 +70,7 @@ export default function Hero() {
               className="relative w-full max-w-[450px] aspect-[3/4] rounded-[2.5rem] overflow-hidden shadow-[0_40px_100px_-20px_rgba(0,0,0,0.3)] border-[12px] border-white"
             >
               <Image
-                src="/imgs/img1.jpg"
+                src="/CORCsite/imgs/img1.webp"
                 alt="Operarios del Reino de Cristo"
                 fill
                 className="object-cover"
